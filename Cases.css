@@ -1,0 +1,40 @@
+*{
+    box-sizing : border-box;
+}
+.case{
+    width: 40px;
+    height: 40px;
+}
+
+.background{
+    background-color: black;
+}
+
+.maze{
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+}
+
+.wallTop{
+    border-top: solid red 2px;
+}
+
+.wallRight{
+    border-right: solid red 2px;
+}
+
+.wallLeft{
+    border-left: solid red 2px;
+}
+
+.wallBottom{
+    border-bottom: solid red 2px;
+}
+
+.entrance{
+    background-color: yellow;
+}
+
+.exit{
+    background-color: green;
+}

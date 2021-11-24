@@ -1,4 +1,4 @@
-const data =
+const data =[
     {
         "3": {
             "ex-0": [{"posX": 0, "posY": 0, "walls": [true, true, false, true], "entrance": true}, {
@@ -33171,4 +33171,4 @@ const data =
                 "walls": [false, true, true, false]
             }, {"posX": 24, "posY": 24, "walls": [false, true, true, true]}]
         }
-    }
+    }]
