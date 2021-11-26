@@ -1,33 +1,43 @@
-import * as script from './Script.js'
+let visited = [];
 
-
-function DFSInteractive(e)
+function DFSIterative(e)
 {
-    let visited = [];
+
     let S = [];
     S.push(e);
+    visited.splice(0);
 
-    while (!S.length)
+    while (S.length !== 0)
     {
-        e = script.lab[S.pop()];
+        const v = lab[S.pop()];
 
-        if(e.visited !== 0)
+        if(v.visited !== true)
         {
-            e.visited = true;
-            visited.push(script.lab.indexOf(e))
+            v.visited = true;
+            for (let w of v.neighbor) {
+                if (!lab[w].visited) {
+                    lab[w].parent = v
+                    S.push(w)
+                }
         }
 
-        if(e.exit)
+        if(v.exit)
         {
-            console.log('dehors');
+            console.log('sors passe-par-tout');
             return S;
         }
-
-        for (let w of v)
-        {
-
-        }
+    }
     }
     return undefined;
 }
+
+// function DFSRecursive(v)
+// {
+//     if(v.visited !== true) {
+//         v.visited = true;
+//     }
+// }
+
+DFSIterative(entrance);
+//DFSRecursive();
 

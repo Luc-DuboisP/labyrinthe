@@ -1,14 +1,16 @@
-export const lab = data[0]["3"]["ex-0"];
+const size = 8;
+const lab = data[0][size]["ex-0"];
 let root = document.getElementById("lab");
+let entrance;
+let exit;
 
-export function createLab()
+ function createLab()
 {
-
 
     for (let i = 0; i < lab.length; i++)
     {
+        //let path = document.setAttribute("path").getElementById("lab");
         let div = document.createElement("div");
-
         div.classList.add("case");
         div.classList.add("background");
 
@@ -34,16 +36,42 @@ export function createLab()
 
         if (lab[i].entrance === true)
         {
+            entrance = i;
             div.classList.add("entrance");
         }
 
         if (lab[i].exit === true)
         {
+            exit = i;
             div.classList.add("exit");
         }
 
         root.appendChild(div);
     }
 }
-createLab()
+
+function createNeighbor() {
+    for (let i = 0; i < lab.length; i++) {
+        lab[i].neighbor = [];
+
+        if (!lab[i].walls[0]) {
+            lab[i].neighbor.push(i - size);
+        }
+
+        if (!lab[i].walls[1]) {
+            lab[i].neighbor.push(i + 1)
+        }
+
+        if (!lab[i].walls[2]) {
+            lab[i].neighbor.push(i + size)
+        }
+
+        if (!lab[i].walls[3]) {
+            lab[i].neighbor.push(i - 1)
+        }
+    }
+ }
+
+createNeighbor();
+createLab();
 
