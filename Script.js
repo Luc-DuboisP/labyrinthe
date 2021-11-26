@@ -9,10 +9,12 @@ let exit;
 
     for (let i = 0; i < lab.length; i++)
     {
-        //let path = document.setAttribute("path").getElementById("lab");
+
         let div = document.createElement("div");
+        div.setAttribute('id', i.toString());
         div.classList.add("case");
         div.classList.add("background");
+
 
         if (lab[i].walls[0] === true)
         {
@@ -50,9 +52,23 @@ let exit;
     }
 }
 
+function addVisitedBox(index) {
+    const visitedBox = document.getElementById(index)
+    visitedBox.classList.add('visited')
+
+}
+
+function addPath(index) {
+
+    const path = document.getElementById(index)
+    path.classList.add('path')
+
+}
+
 function createNeighbor() {
     for (let i = 0; i < lab.length; i++) {
         lab[i].neighbor = [];
+        lab[i].index = i;
 
         if (!lab[i].walls[0]) {
             lab[i].neighbor.push(i - size);

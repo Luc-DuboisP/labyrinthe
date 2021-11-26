@@ -38,3 +38,11 @@
 .exit{
     background-color: green;
 }
+
+.visited{
+    background-color: deeppink;
+}
+
+.path{
+    background-color: blue;
+}
